@@ -1,11 +1,7 @@
-import ProductCard from "../components/ProductCard/ProductCard";
+import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
 
 function Home() {
-  return (
-    <div>
-      <ProductCard />
-    </div>
-  );
+  return <DisplaySelectedProduct />;
 }
 
 export default Home;
