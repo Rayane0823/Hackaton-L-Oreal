@@ -1,4 +1,8 @@
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null
+create database LOreal_DB3;
+use LOreal_DB3;
+
+create table product (
+  id int primary key auto_increment not null,
+  name varchar(100) not null,
+  img varchar(100)
 );
