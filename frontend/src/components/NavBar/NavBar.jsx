@@ -1,28 +1,29 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
+import Logo from "../../assets/LogoFinal.png";
 
-function NavBar({ transparent }) {
+function NavBar() {
   return (
-    <nav className={`navbar ${transparent}`}>
-      <ul className="navbarLink">
-        <li>
-          <Link to="/" className="navbarLink">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/top-product" className="navbarLink">
-            Top Product
-          </Link>
-        </li>
-      </ul>
+    <nav className="navbar">
+      <img className="nav-logo" src={Logo} alt="" />
+      <div>
+        <ul className="navbarLink">
+          <li>
+            <Link to="/" className="navbarLink">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/top-product" className="navbarLink">
+              Meilleur Produits
+            </Link>
+          </li>
+        </ul>
+        <h1 className="main-title">Wild Beauty</h1>
+      </div>
     </nav>
   );
 }
-NavBar.propTypes = {
-  transparent: PropTypes.string.isRequired,
-};
 
 export default NavBar;
