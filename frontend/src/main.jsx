@@ -3,12 +3,19 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
+import Home from "./pages/Home";
+import TopProduct from "./pages/TopProduct";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
+    children: [
+      {
+        path: "/top-product",
+        element: <TopProduct />,
+      },
+    ],
   },
 ]);
 
