@@ -9,11 +9,11 @@ function NavBar({ transparent }) {
       <ul className="navbarLink">
         <li>
           <Link to="/" className="navbarLink">
-            Product
+            Home
           </Link>
         </li>
         <li>
-          <Link to="/" className="navbarLink">
+          <Link to="/top-product" className="navbarLink">
             Top Product
           </Link>
         </li>
