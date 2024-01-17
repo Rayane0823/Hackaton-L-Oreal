@@ -1,5 +1,11 @@
+import ProductCard from "../components/ProductCard/ProductCard";
+
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <ProductCard />
+    </div>
+  );
 }
 
 export default Home;
