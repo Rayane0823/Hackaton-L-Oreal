@@ -1,5 +1,7 @@
+import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
+
 function Home() {
-  return <h1>Home</h1>;
+  return <DisplaySelectedProduct />;
 }
 
 export default Home;

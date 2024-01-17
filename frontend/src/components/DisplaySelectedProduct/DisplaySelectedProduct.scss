@@ -1,0 +1,16 @@
+.selected_product_container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 80vw;
+  align-items: center;
+}
+.selected_product_image {
+  width: 10rem;
+  height: 10rem;
+}
+.selected_product_title {
+  font-size: 1.2rem;
+}
+.selected_product_paragraph {
+  font-size: 1rem;
+}
