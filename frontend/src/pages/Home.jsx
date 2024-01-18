@@ -1,11 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
+import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
+import NavBar from "../components/NavBar/NavBar";
+import "./Home.scss";
 
 function Home() {
-  const secondsProducts = useLoaderData();
+  // const secondsProducts = useLoaderData();
   return (
-    <button type="button" onClick={() => console.info(secondsProducts)}>
-      test
-    </button>
+    <>
+      <NavBar />
+      <DisplaySelectedProduct />
+    </>
   );
 }
 

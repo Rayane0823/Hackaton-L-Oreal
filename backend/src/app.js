@@ -34,7 +34,6 @@ app.use(
     ],
   })
 );
-
 /* ************************************************************************* */
 
 // Request Parsing: Understanding the purpose of this part
