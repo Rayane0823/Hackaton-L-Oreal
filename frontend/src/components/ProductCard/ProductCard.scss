@@ -1,124 +1,95 @@
+@import "../../../variables";
 .click_desc {
   cursor: pointer;
-  padding-bottom: 0vh;
-  margin-top: -9vh;
-  margin-right: 2vw;
+
   text-align: right;
 }
 
 .desc {
   cursor: pointer;
-  border: 2px solid black;
-  margin-top: -8vh;
-  position: absolute;
+  padding-inline: 1vw;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
   padding-top: 1vh;
-  padding-bottom: 8vh;
+  padding-block: 2vh;
+  padding-inline: 2vw;
   width: 87vw;
-  border-radius: 0px 0px 15px 15px;
-  background-color: #e7fbee;
+  border-radius: 15px;
+  background-color: $secondary-medium;
   height: auto;
-  border-color: white;
   border-top: 0;
   text-align: left;
 }
 
+.desc-hidden {
+  display: none;
+}
+
 .Card {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
-  margin-top: 3vh;
 }
 .titlecard {
-  color: white;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  color: $white;
   padding-top: 2vh;
-  position: relative;
-  text-align: center;
-  top: -31vh;
-  left: 0vw;
+  text-shadow:
+    -1px -1px 0 $dark,
+    1px -1px 0 $dark,
+    -1px 1px 0 $dark,
+    1px 1px 0 $dark;
 }
 .imgcard {
-  height: 29vh;
-  width: 87vw;
-  margin-top: 2vh;
-  /* padding-top: 8vh; */
+  height: auto;
+  width: 80vw;
   border-radius: 15px;
-  box-shadow: 1px 1px 3px 1px white;
-  -webkit-text-stroke: black;
-  -webkit-text-stroke-width: 1px;
   font-size: 10vw;
-  color: white;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .all_card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #c0a0cd;
-  height: 100vh;
-  width: 100vw;
-  gap: 9vh;
 }
 
 .linkloreal {
-  position: relative;
-  top: 8vh;
-  right: -2vw;
+  text-align: center;
+  background-color: $secondary-dark;
+  border-radius: 10px;
+  text-decoration: none;
+  color: $white;
+  font-weight: bold;
+  border: solid 1px $white;
+  margin-bottom: 0.5vh;
 }
-
-p.price {
-  position: relative;
-  top: -3vh;
-  left: 77vw;
+.button__desc {
+  all: unset;
+  text-align: center;
+  border-radius: 10px;
+  margin-block: 1vh;
+  height: 5vh;
+  font-size: 1.2rem;
+  width: 40vw;
+  background-color: $secondary-dark;
+  color: $white;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-
-@media screen and (min-width: 500px) {
-  .imgcard {
-    height: 29vh;
-    width: 21vw;
-    border-radius: 15px;
-    box-shadow: 1px 1px 3px 1px white;
-    -webkit-text-stroke: black;
-    -webkit-text-stroke-width: 1px;
-    font-size: 10vw;
-    color: white;
-  }
-
-  .all_card {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    background-color: #c0a0cd;
-    height: 100vh;
-    width: 100vw;
-    gap: 9vh;
-    padding-left: 2vw;
-    /* margin-left: 0vw; */
-  }
-
-  .titlecard {
-    color: white;
-    padding-top: 0vh;
-    margin-top: -30vh;
-    text-align: center;
-  }
-
-  .desc {
-    cursor: pointer;
-    border: 2px solid black;
-    margin-top: 23vh;
-    position: absolute;
-    padding-top: 1vh;
-    width: 20.8vw;
-    border-radius: 0px 0px 15px 15px;
-    background-color: #e7fbee;
-    height: auto;
-    border-color: white;
-    border-top: 0;
-    text-align: left;
-  }
-  .click_desc {
-    cursor: pointer;
-    padding-bottom: 0vh;
-    margin-top: 20vh;
-    margin-right: 1vw;
-    text-align: right;
-  }
+.price {
+  color: $primary-dark;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
+.desc_text {
+  color: $primary-dark;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 800px) {
 }

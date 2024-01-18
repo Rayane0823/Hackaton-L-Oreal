@@ -3,12 +3,12 @@
     "id": 1,
     "Titre": "Produit 1",
     "Image": "https://media.carrefour.fr/medias/c552426816b0317ab53ca2a0c189704f/p_540x540/03600542418812-a1n1-s01.jpg",
-    "description": "shampoing cheveux sec"
+    "description": "shampooing cheveux secs"
   },
   {
     "id": 2,
     "Titre": "Produit 2",
     "Image": "https://media.carrefour.fr/medias/c552426816b0317ab53ca2a0c189704f/p_540x540/03600542418812-a1n1-s01.jpg",
-    "description": "shampoing cheveux sec"
+    "description": "shampooing cheveux secs"
   }
 ]

@@ -5,9 +5,18 @@
   padding: 0;
   font-family: $font-app;
 }
-
-.selected_product_position {
+.homepage {
+  background-color: $primary-light;
+  background-size: cover;
+  padding-bottom: 5vh;
+}
+.homepage__selected__product {
   position: absolute;
-  top: 41vh;
-  left: 0vw;
+  top: 32vh;
+  left: 5vw;
+}
+.homepage__searchBar {
+  position: absolute;
+  top: 38vh;
+  right: 10vw;
 }
