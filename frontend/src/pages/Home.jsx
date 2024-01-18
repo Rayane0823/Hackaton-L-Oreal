@@ -6,7 +6,9 @@ function Home() {
   return (
     <>
       <NavBar />
-      <DisplaySelectedProduct />
+      <div className="selected_product_position">
+        <DisplaySelectedProduct />
+      </div>
     </>
   );
 }
