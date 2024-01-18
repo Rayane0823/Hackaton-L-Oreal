@@ -2,7 +2,7 @@ const tables = require("../tables");
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const products = await tables.product.readAll();
+    const products = await tables.ventes.readAll();
 
     res.json(products);
   } catch (err) {
@@ -10,6 +10,17 @@ const getAllProducts = async (req, res, next) => {
   }
 };
 
+const getSecondsProducts = async (req, res, next) => {
+  try {
+    const idProduct = req.params.id;
+    const secondsProducts = await tables.ventes.readAllById(idProduct);
+    res.json(secondsProducts);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getAllProducts,
+  getSecondsProducts,
 };
