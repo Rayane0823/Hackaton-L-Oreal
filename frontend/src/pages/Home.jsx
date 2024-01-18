@@ -23,6 +23,43 @@ function Home() {
     }
   }
 
+  const testArray = [
+    {
+      ProductID: 10,
+      nombre_d_achats: 10,
+    },
+    {
+      ProductID: 14,
+      nombre_d_achats: 8,
+    },
+    {
+      ProductID: 20,
+      nombre_d_achats: 4,
+    },
+    {
+      ProductID: 2,
+      nombre_d_achats: 2,
+    },
+  ];
+
+  // eslint-disable-next-line array-callback-return, consistent-return
+  const secondProductsLink = testArray.map((secondProduct) => {
+    const secondProductsInfos = AllProducts.find(
+      (product) => product.ProductID === secondProduct.ProductID
+    );
+    if (secondProductsInfos) {
+      return {
+        name: secondProductsInfos.Item_Purchased,
+        brand: secondProductsInfos.Brand,
+        type: secondProductsInfos.Category_y,
+        description: secondProductsInfos.Description,
+        price: secondProductsInfos.Price,
+        quantity: secondProduct.nombre_d_achats,
+      };
+    }
+  });
+  console.info(secondProductsLink);
+
   console.info(UniqueProduct);
   return (
     <>
