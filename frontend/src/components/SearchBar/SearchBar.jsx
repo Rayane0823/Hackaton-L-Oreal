@@ -1,12 +1,12 @@
 import * as React from "react";
-import { useState } from "react";
 import PropTypes from "prop-types";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import "./SearchBar.scss";
+import { useGlobalContext } from "../Context/GlobalContextProvider";
 
 function SearchBar({ UniqueProduct }) {
-  const [selectedValue, setSelectedValue] = useState(null);
+  const { selectedValue, setSelectedValue } = useGlobalContext();
   console.info(selectedValue);
   const handleChange = (newValue) => {
     setSelectedValue(newValue);
