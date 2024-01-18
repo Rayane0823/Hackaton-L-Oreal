@@ -18,7 +18,6 @@ function SearchBar({ UniqueProduct }) {
   //     .then((data) => setSecondProductArray(data))
   //     .catch((error) => console.error(error));
   // };
-
   useEffect(() => {
     const sendToBack = async () => {
       try {
