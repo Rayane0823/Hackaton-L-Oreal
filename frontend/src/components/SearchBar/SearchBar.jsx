@@ -7,42 +7,50 @@ import "./SearchBar.scss";
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 
 function SearchBar({ UniqueProduct }) {
-  const { selectedValue, setSelectedValue, setSecondProductArray } =
-    useGlobalContext();
-
-  // const sendToContext = async () => {
-  //   fetch(
-  //     `${import.meta.env.VITE_BACKEND_URL}/api/products/${selectedValue.id}/seconds`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => setSecondProductArray(data))
-  //     .catch((error) => console.error(error));
-  // };
+  const {
+    selectedValue,
+    setSelectedValue,
+    setSecondProductArray,
+    setSimilarProduct,
+  } = useGlobalContext();
 
   useEffect(() => {
     const sendToBack = async () => {
       try {
-        await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/products/${selectedValue.id}/seconds`
-        )
-          .then((response) => response.json())
-          .then((data) => setSecondProductArray(data))
-          .catch((err) => {
-            console.error(err);
-          });
+        const secondsResponse = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/${
+            selectedValue.id
+          }/seconds`
+        );
+        const mlResponse = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/${
+            selectedValue.id
+          }/ml`
+        );
+
+        if (!secondsResponse.ok || !mlResponse.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const secondsData = await secondsResponse.json();
+        const mlData = await mlResponse.json();
+
+        setSecondProductArray(secondsData);
+        setSimilarProduct(mlData);
       } catch (error) {
-        console.error("coucou");
+        console.error("An error occurred:", error.message);
       }
     };
 
-    sendToBack(selectedValue);
+    if (selectedValue) {
+      sendToBack();
+    }
   }, [selectedValue]);
-  // console.log(secondProductArray);
 
   const handleChange = (event, newValue) => {
     setSelectedValue(newValue);
   };
-  // console.log(selectedValue);
+
   return (
     <div className="main">
       <div className="search">
