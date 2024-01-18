@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
 import NavBar from "../components/NavBar/NavBar";
-import ProductCard from "../components/ProductCard/ProductCard";
 import "./Home.scss";
 
 function Home() {
@@ -20,8 +19,9 @@ function Home() {
   return (
     <>
       <NavBar />
-      <DisplaySelectedProduct />
-      <ProductCard />
+      <div className="selected_product_position">
+        <DisplaySelectedProduct />
+      </div>
     </>
   );
 }

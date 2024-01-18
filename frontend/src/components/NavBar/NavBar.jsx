@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
-import Logo from "../../assets/LogoFinal.png";
+import Logo from "../../assets/logonav.png";
 
 function NavBar() {
   return (
@@ -16,7 +16,7 @@ function NavBar() {
           </li>
           <li>
             <Link to="/top-product" className="navbarLink">
-              Meilleur Produits
+              Meilleurs Produits
             </Link>
           </li>
         </ul>
