@@ -12,7 +12,7 @@ const mlConfig = require("./controllers/ML");
 
 router.get("/products", productControllers.getAllProducts);
 router.get("/products/:id/seconds", productControllers.getSecondsProducts);
-router.get("/products/ml", mlConfig);
+router.get("/products/:id/ml", mlConfig);
 /* ************************************************************************* */
 
 module.exports = router;
