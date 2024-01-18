@@ -25,14 +25,18 @@ function Home() {
 
   console.info(UniqueProduct);
   return (
-    <>
+    <div className="homepage">
       <NavBar />
-      <div className="selected_product_position">
-        <DisplaySelectedProduct />
+      <div className="homepage__searchBar">
         <SearchBar UniqueProduct={UniqueProduct} />
+      </div>
+      <div className="homepage__selected__product">
+        <DisplaySelectedProduct />
+      </div>
+      <div className="homepage__productCArd">
         <ProductCard />
       </div>
-    </>
+    </div>
   );
 }
 export default Home;

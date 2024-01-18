@@ -1,25 +1,25 @@
 @import "../../../variables.scss";
 
 .selected_product_container {
+  position: relative;
   display: flex;
   justify-content: center;
-  max-width: 80vw;
-  border: 1px white solid;
+
   border-radius: 15px;
+  width: 50vw;
 }
 .selected_product_image {
-  width: 100%;
-  height: 100%;
+  width: 48vw;
 }
 .selected_product_title {
   font-size: 1.2rem;
   position: absolute;
   color: $white;
   text-shadow:
-    -1px -1px 0 $secondary-light,
-    1px -1px 0 $secondary-light,
-    -1px 1px 0 $secondary-light,
-    1px 1px 0 $secondary-light;
+    -1px -1px 0 $dark,
+    1px -1px 0 $dark,
+    -1px 1px 0 $dark,
+    1px 1px 0 $dark;
 }
 .selected_product_paragraph {
   font-size: 1rem;

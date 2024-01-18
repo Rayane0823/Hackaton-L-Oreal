@@ -20,9 +20,14 @@ function SearchBar({ UniqueProduct }) {
           options={UniqueProduct}
           onChange={handleChange}
           getOptionLabel={(option) => option.name}
-          sx={{ width: 250 }}
           /* eslint-disable react/jsx-props-no-spreading */
-          renderInput={(params) => <TextField {...params} label="Produits" />}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Produits"
+              className="list__products"
+            />
+          )}
         />
       </div>
     </div>

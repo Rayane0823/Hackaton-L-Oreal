@@ -1,5 +1,6 @@
 import "./ProductCard.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../../../../backend/src/api.json";
 
 function ProductCard() {
@@ -12,42 +13,45 @@ function ProductCard() {
       return newStates;
     });
   };
+  console.info(handleClick);
+
+  const [open, setIsOpen] = useState(false);
+
+  const hClick = () => {
+    setIsOpen(!open);
+  };
 
   return (
     <div className="all_card">
       {API &&
         API.map((CardDecision, index) => {
           return (
-            <div key={[index]}>
-              <div className="Card">
-                <img
-                  className="imgcard"
-                  src={CardDecision.Image}
-                  alt="shampoing"
-                />
-                <h2 className="titlecard">{CardDecision.Titre}</h2>
-                <p
-                  onClick={() => handleClick(index)}
-                  className={cardStates[index] ? "desc" : "click_desc"}
-                  onKeyDown={() => handleClick(index)}
-                  role="presentation"
-                >
-                  {cardStates[index]
-                    ? CardDecision.description
-                    : "clique pour une description"}
+            <div key={[index]} className="Card">
+              <h2 className="titlecard">{CardDecision.Titre}</h2>
+              <img className="imgcard" src="src/assets/0.png" alt="shampoing" />
+
+              <button className="button__desc" type="button" onClick={hClick}>
+                Plus de détails
+              </button>
+              <div className={open ? "desc" : "desc-hidden"}>
+                <p className="desc_text">
+                  <b>Type:</b> shampooing
                 </p>
-                {cardStates[index] ? (
-                  <div>
-                    <a
-                      className="linkloreal"
-                      href="https://www.loreal-paris.fr/?&wiz_medium=cpc&wiz_source=google&wiz_campaign=oap_goog_ao_othr__bran_search_text_eg_fr__roas&gad_source=1&gclid=Cj0KCQiAtaOtBhCwARIsAN_x-3LZgHWOusXX-wpSeWR9TgvkjCsz_C2W31AcNbBxvAr0_etV7yQsJjgaAsguEALw_wcB&gclsrc=aw.ds"
-                      alt="loreal"
-                    >
-                      Lien achat de la suggestion
-                    </a>
-                    <p className="price">20$</p>
-                  </div>
-                ) : null}
+                <p className="desc_text">
+                  <b>Description: </b>Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Accusantium voluptatum culpa repudiandae!
+                  Pariatur odit temporibus.
+                </p>
+                <p className="desc_text">Shampoing pour cheveux secs</p>
+                <p className="price">20€</p>
+                {cardStates[index] && CardDecision.description}
+                <Link
+                  to="https://www.loreal-paris.fr/?&wiz_medium=cpc&wiz_source=google&wiz_campaign=oap_goog_ao_othr__bran_search_text_eg_fr__roas&gad_source=1&gclid=Cj0KCQiAtaOtBhCwARIsAN_x-3LZgHWOusXX-wpSeWR9TgvkjCsz_C2W31AcNbBxvAr0_etV7yQsJjgaAsguEALw_wcB&gclsrc=aw.ds"
+                  className="linkloreal"
+                  alt="loreal"
+                >
+                  Lien du site marchand
+                </Link>
               </div>
             </div>
           );

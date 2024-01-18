@@ -1,29 +1,40 @@
 @import "../../../variables.scss";
-
+.header {
+  display: flex;
+}
+.test {
+  justify-content: flex-end;
+  display: flex;
+  width: 100vw;
+}
 .navbar {
   height: 40vh;
-  display: flex;
-  justify-content: space-between;
   background-image: url("../../assets/backgroundnav.jpeg");
   background-size: cover;
   background-position: center;
   padding-top: 1vh;
   border-bottom: 2px solid $white;
+  margin-bottom: 15vh;
 }
 .nav-logo {
   width: 25vw;
   height: 25vw;
 }
+
 .main-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-size: 2.1rem;
   color: $white;
-  margin-top: 13vh;
+  padding: 5vw;
   text-shadow:
-    -1px -1px 0 $secondary-light,
-    1px -1px 0 $secondary-light,
-    -1px 1px 0 $secondary-light,
-    1px 1px 0 $secondary-light;
+    -1px -1px 0 $dark,
+    1px -1px 0 $dark,
+    -1px 1px 0 $dark,
+    1px 1px 0 $dark;
 }
+
 .navbarLinkContainer ul {
   display: flex;
   justify-content: flex-end;
@@ -31,7 +42,7 @@
   list-style-type: none;
   padding: 0;
 
-  li {
+  .link {
     margin-inline: 5vw;
     margin-top: 1vh;
   }
@@ -41,10 +52,10 @@
     font-size: 1rem;
     font-weight: 500;
     text-shadow:
-      -1px -1px 0 $secondary-light,
-      1px -1px 0 $secondary-light,
-      -1px 1px 0 $secondary-light,
-      1px 1px 0 $secondary-light;
+      -1px -1px 0 $dark,
+      1px -1px 0 $dark,
+      -1px 1px 0 $dark,
+      1px 1px 0 $dark;
   }
 
   a::after {
