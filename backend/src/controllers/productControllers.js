@@ -2,7 +2,7 @@ const tables = require("../tables");
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const products = await tables.product.readAll();
+    const products = await tables.ventes.readAll();
 
     res.json(products);
   } catch (err) {

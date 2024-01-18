@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     loader: async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/products/:id/seconds`
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
