@@ -1,29 +1,28 @@
-import React from "react";
+import * as React from "react";
+import PropTypes from "prop-types";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import List from "./List";
-import data from "./ListData.json";
 import "./SearchBar.scss";
 
-function SearchBar() {
-  const inputText = "";
-
+function SearchBar({ UniqueProduct }) {
   return (
     <div className="main">
       <div className="search">
         <Autocomplete
           disablePortal
           id="combo-box-demo"
-          options={data}
-          getOptionLabel={(option) => option.text}
-          sx={{ width: 600 }}
+          options={UniqueProduct}
+          getOptionLabel={(option) => option}
+          sx={{ width: 250 }}
           /* eslint-disable react/jsx-props-no-spreading */
           renderInput={(params) => <TextField {...params} label="Produits" />}
         />
       </div>
-      <List input={inputText} />
     </div>
   );
 }
+SearchBar.propTypes = {
+  UniqueProduct: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default SearchBar;
