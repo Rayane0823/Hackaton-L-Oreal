@@ -8,11 +8,21 @@ import ProductCard from "../components/ProductCard/ProductCard";
 function Home() {
   const AllProducts = useLoaderData();
   const UniqueProduct = [];
+  const uniqueProductIds = new Set();
+
   for (let i = 0; i < AllProducts.length; i += 1) {
-    if (!UniqueProduct.includes(AllProducts[i].Item_Purchased)) {
-      UniqueProduct.push(AllProducts[i].Item_Purchased);
+    const productId = AllProducts[i].ProductID;
+
+    if (!uniqueProductIds.has(productId)) {
+      UniqueProduct.push({
+        name: AllProducts[i].Item_Purchased,
+        id: productId,
+      });
+
+      uniqueProductIds.add(productId);
     }
   }
+
   console.info(UniqueProduct);
   return (
     <>
