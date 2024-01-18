@@ -1,12 +1,17 @@
 import NavBar from "../components/NavBar/NavBar";
+import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
+import "./Home.scss";
 import ProductCard from "../components/ProductCard/ProductCard";
 
 function Home() {
   return (
-    <div>
+    <>
       <NavBar />
-      <ProductCard />
-    </div>
+      <div className="selected_product_position">
+        <DisplaySelectedProduct />
+        <ProductCard />
+      </div>
+    </>
   );
 }
 
