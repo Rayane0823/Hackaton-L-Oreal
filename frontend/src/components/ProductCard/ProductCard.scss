@@ -1,21 +1,124 @@
 .click_desc {
   cursor: pointer;
+  padding-bottom: 0vh;
+  margin-top: -9vh;
+  margin-right: 2vw;
+  text-align: right;
+}
+
+.desc {
+  cursor: pointer;
+  border: 2px solid black;
+  margin-top: -8vh;
+  position: absolute;
+  padding-top: 1vh;
+  padding-bottom: 8vh;
+  width: 87vw;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #e7fbee;
+  height: auto;
+  border-color: white;
+  border-top: 0;
+  text-align: left;
 }
 
 .Card {
-  border: 2px solid black;
-  width: auto;
-  height: auto;
-  text-align-last: center;
+  text-align: left;
+  margin-top: 3vh;
 }
-
-img {
-  height: 20vh;
+.titlecard {
+  color: white;
+  padding-top: 2vh;
+  position: relative;
+  text-align: center;
+  top: -31vh;
+  left: 0vw;
+}
+.imgcard {
+  height: 29vh;
+  width: 87vw;
+  margin-top: 2vh;
+  /* padding-top: 8vh; */
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px 1px white;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
+  font-size: 10vw;
+  color: white;
 }
 
 .all_card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 14vh;
+  background-color: #c0a0cd;
+  height: 100vh;
+  width: 100vw;
+  gap: 9vh;
+}
+
+.linkloreal {
+  position: relative;
+  top: 8vh;
+  right: -2vw;
+}
+
+p.price {
+  position: relative;
+  top: -3vh;
+  left: 77vw;
+}
+
+@media screen and (min-width: 500px) {
+  .imgcard {
+    height: 29vh;
+    width: 21vw;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px 1px white;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 1px;
+    font-size: 10vw;
+    color: white;
+  }
+
+  .all_card {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    background-color: #c0a0cd;
+    height: 100vh;
+    width: 100vw;
+    gap: 9vh;
+    padding-left: 2vw;
+    /* margin-left: 0vw; */
+  }
+
+  .titlecard {
+    color: white;
+    padding-top: 0vh;
+    margin-top: -30vh;
+    text-align: center;
+  }
+
+  .desc {
+    cursor: pointer;
+    border: 2px solid black;
+    margin-top: 23vh;
+    position: absolute;
+    padding-top: 1vh;
+    width: 20.8vw;
+    border-radius: 0px 0px 15px 15px;
+    background-color: #e7fbee;
+    height: auto;
+    border-color: white;
+    border-top: 0;
+    text-align: left;
+  }
+  .click_desc {
+    cursor: pointer;
+    padding-bottom: 0vh;
+    margin-top: 20vh;
+    margin-right: 1vw;
+    text-align: right;
+  }
 }

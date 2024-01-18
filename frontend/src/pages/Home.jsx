@@ -1,7 +1,8 @@
-import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
 import NavBar from "../components/NavBar/NavBar";
 import SearchBar from "../components/SearchBar/SearchBar";
+import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
 import "./Home.scss";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 function Home() {
   return (
@@ -9,9 +10,9 @@ function Home() {
       <NavBar />
       <div className="selected_product_position">
         <DisplaySelectedProduct />
-      </div>
-      <DisplaySelectedProduct />
-      <SearchBar />
+        <SearchBar />
+        <ProductCard />
+      </div> 
     </>
   );
 }
