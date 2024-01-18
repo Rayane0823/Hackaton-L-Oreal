@@ -1,0 +1,26 @@
+@import "../../../variables.scss";
+
+.selected_product_container {
+  display: flex;
+  justify-content: center;
+  max-width: 80vw;
+  border: 1px white solid;
+  border-radius: 15px;
+}
+.selected_product_image {
+  width: 100%;
+  height: 100%;
+}
+.selected_product_title {
+  font-size: 1.2rem;
+  position: absolute;
+  color: $white;
+  text-shadow:
+    -1px -1px 0 $secondary-light,
+    1px -1px 0 $secondary-light,
+    -1px 1px 0 $secondary-light,
+    1px 1px 0 $secondary-light;
+}
+.selected_product_paragraph {
+  font-size: 1rem;
+}
