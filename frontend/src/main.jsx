@@ -10,6 +10,20 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    loader: async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return response;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+      }
+    },
     children: [
       {
         path: "/top-product",
