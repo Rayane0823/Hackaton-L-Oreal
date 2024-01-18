@@ -5,9 +5,20 @@ const GlobalContext = createContext();
 
 function GlobalContextProvider({ children }) {
   const [selectedValue, setSelectedValue] = useState(null);
+  const [secondProductArray, setSecondProductArray] = useState([]);
   const contextValue = useMemo(() => {
-    return { selectedValue, setSelectedValue };
-  }, [selectedValue, setSelectedValue]);
+    return {
+      selectedValue,
+      setSelectedValue,
+      secondProductArray,
+      setSecondProductArray,
+    };
+  }, [
+    selectedValue,
+    setSelectedValue,
+    secondProductArray,
+    setSecondProductArray,
+  ]);
 
   return (
     <GlobalContext.Provider value={contextValue}>
