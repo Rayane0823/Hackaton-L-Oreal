@@ -9,17 +9,27 @@ import { useGlobalContext } from "../Context/GlobalContextProvider";
 function SearchBar({ UniqueProduct }) {
   const { selectedValue, setSelectedValue, setSecondProductArray } =
     useGlobalContext();
+
+  // const sendToContext = async () => {
+  //   fetch(
+  //     `${import.meta.env.VITE_BACKEND_URL}/api/products/${selectedValue.id}/seconds`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => setSecondProductArray(data))
+  //     .catch((error) => console.error(error));
+  // };
+
   useEffect(() => {
     const sendToBack = async () => {
       try {
-        const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/products/${selectedValue.id}/seconds`,
-          {
-            method: "GET",
-          }
-        );
-        console.info("In try spec");
-        setSecondProductArray(response.body);
+        await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/${selectedValue.id}/seconds`
+        )
+          .then((response) => response.json())
+          .then((data) => setSecondProductArray(data))
+          .catch((err) => {
+            console.error(err);
+          });
       } catch (error) {
         console.error("coucou");
       }
