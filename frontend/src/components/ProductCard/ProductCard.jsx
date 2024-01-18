@@ -20,11 +20,11 @@ function ProductCard() {
           return (
             <div key={[index]}>
               <div className="Card">
-                <h2>{CardDecision.Titre}</h2>
                 <img src={CardDecision.Image} alt="shampoing" />
+                <h2>{CardDecision.Titre}</h2>
                 <p
                   onClick={() => handleClick(index)}
-                  className="click_desc"
+                  className={cardStates[index] ? "desc" : "click_desc"}
                   onKeyDown={() => handleClick(index)}
                   role="presentation"
                 >

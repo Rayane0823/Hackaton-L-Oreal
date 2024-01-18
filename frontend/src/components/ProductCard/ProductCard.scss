@@ -1,16 +1,46 @@
 .click_desc {
   cursor: pointer;
+  padding-bottom: 0vh;
+  margin-top: -3vh;
+  text-align: right;
+}
+
+.desc {
+  cursor: pointer;
+  border: 2px solid black;
+  margin-top: -2vh;
+  position: absolute;
+  padding-top: 1vh;
+  width: 87vw;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #e7fbee;
+  height: auto;
+  border-color: white;
+  border-top: 0;
+  text-align: left;
 }
 
 .Card {
-  border: 2px solid black;
-  width: auto;
-  height: auto;
-  text-align-last: center;
+  text-align: left;
+  margin-top: 3vh;
 }
-
+h2 {
+  position: absolute;
+  right: 39vw;
+  color: white;
+  padding-top: 2vh;
+}
 img {
-  height: 20vh;
+  height: 29vh;
+  width: 87vw;
+  margin-top: 2vh;
+  /* padding-top: 8vh; */
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px 1px white;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
+  font-size: 10vw;
+  color: white;
 }
 
 .all_card {
@@ -18,4 +48,38 @@ img {
   flex-direction: column;
   align-items: center;
   margin-top: 14vh;
+  background-color: #c0a0cd;
+  height: 100vh;
+  width: 100vw;
+  gap: 9vh;
+}
+
+@media screen and (min-width: 500px) {
+  img {
+    height: 29vh;
+    width: 21vw;
+    margin-top: -7vh;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px 1px white;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 1px;
+    font-size: 10vw;
+    color: white;
+  }
+
+  .all_card {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 14vh;
+    background-color: #c0a0cd;
+    height: 100vh;
+    width: 100vw;
+    gap: 9vh;
+  }
+
+  h2 {
+    color: white;
+    padding-top: 2vh;
+  }
 }
