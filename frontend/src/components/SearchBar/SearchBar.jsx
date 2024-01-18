@@ -13,14 +13,13 @@ function SearchBar({ UniqueProduct }) {
   };
   return (
     <div className="main">
-      <div className="search">
+      <div className={`${selectedValue ? "reduced-search" : "search"}`}>
         <Autocomplete
           disablePortal
           id="combo-box-demo"
           options={UniqueProduct}
           onChange={handleChange}
           getOptionLabel={(option) => option.name}
-          sx={{ width: 250 }}
           /* eslint-disable react/jsx-props-no-spreading */
           renderInput={(params) => <TextField {...params} label="Produits" />}
         />
