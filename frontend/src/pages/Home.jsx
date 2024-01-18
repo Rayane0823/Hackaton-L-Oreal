@@ -12,7 +12,7 @@ function Home() {
         <DisplaySelectedProduct />
         <SearchBar />
         <ProductCard />
-      </div> 
+      </div>
     </>
   );
 }
