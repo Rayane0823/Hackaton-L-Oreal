@@ -23,12 +23,15 @@
 }
 
 .navbarLink {
-  padding: 0 0.3rem;
   color: inherit;
   display: flex;
   list-style-type: none;
   margin-right: 0.5rem;
   text-decoration: none;
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   cursor: pointer;
+}
+
+ul.navbarLink {
+  margin-left: 45%;
 }
