@@ -8,7 +8,7 @@ import "./SearchBar.scss";
 function SearchBar({ UniqueProduct }) {
   const [selectedValue, setSelectedValue] = useState(null);
   console.info(selectedValue);
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setSelectedValue(newValue);
   };
   return (
