@@ -9,9 +9,13 @@
 }
 
 .search {
-  width: 15vw;
+  width: 30vw;
+  transform: translateX(15%);
 }
-
+.nosearch {
+  width: 60vw;
+  transform: translateX(-38%);
+}
 .list__products {
   background-color: $white;
   border-radius: 15%;

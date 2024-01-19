@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar/NavBar";
 import SearchBar from "../components/SearchBar/SearchBar";
 import "./Home.scss";
 import ProductCard from "../components/ProductCard/ProductCard";
+import ProductCardSimiliar from "../components/ProducCardSimiliar/ProducCardSimiliar";
 import { useGlobalContext } from "../components/Context/GlobalContextProvider";
 
 function Home() {
@@ -12,14 +13,21 @@ function Home() {
   const AllProducts = useLoaderData();
   const UniqueProduct = [];
   const uniqueProductIds = new Set();
+  const { setAllProducts } = useGlobalContext();
+  setAllProducts(UniqueProduct);
 
   for (let i = 0; i < AllProducts.length; i += 1) {
     const productId = AllProducts[i].ProductID;
 
     if (!uniqueProductIds.has(productId)) {
       UniqueProduct.push({
-        name: AllProducts[i].Item_Purchased,
         id: productId,
+        name: AllProducts[i].Item_Purchased,
+        brand: AllProducts[i].Brand,
+        type: AllProducts[i].Category_y,
+        description: AllProducts[i].Description,
+        price: AllProducts[i].Price,
+        src: AllProducts[i].image_link,
       });
 
       uniqueProductIds.add(productId);
@@ -33,6 +41,7 @@ function Home() {
     );
     if (secondProductsInfos) {
       return {
+        id: secondProductsInfos.ProductID,
         name: secondProductsInfos.Item_Purchased,
         type: secondProductsInfos.Category_y,
         description: secondProductsInfos.Description,
@@ -41,9 +50,7 @@ function Home() {
     }
   });
   const DisplayThreeProducts = secondProductsLink.slice(0, 3);
-  console.info(secondProductsLink);
 
-  console.info(UniqueProduct);
   return (
     <div className="homepage">
       <NavBar />
@@ -54,9 +61,11 @@ function Home() {
         <DisplaySelectedProduct />
       </div>
       <div className="homepage__productCArd">
+        <ProductCardSimiliar />
         {DisplayThreeProducts.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             name={product.name}
             type={product.type}
             description={product.description}

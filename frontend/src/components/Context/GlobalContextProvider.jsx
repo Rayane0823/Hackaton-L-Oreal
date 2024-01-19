@@ -7,6 +7,7 @@ function GlobalContextProvider({ children }) {
   const [selectedValue, setSelectedValue] = useState(null);
   const [secondProductArray, setSecondProductArray] = useState([]);
   const [similarProduct, setSimilarProduct] = useState([]);
+  const [allProducts, setAllProducts] = useState();
   const [cardStates, setCardStates] = useState();
   const contextValue = useMemo(() => {
     return {
@@ -16,6 +17,8 @@ function GlobalContextProvider({ children }) {
       setSecondProductArray,
       similarProduct,
       setSimilarProduct,
+      allProducts,
+      setAllProducts,
       cardStates,
       setCardStates,
     };

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/GlobalContextProvider";
 
-function ProductCard({ name, type, description, price }) {
+function ProductCard({ id, name, type, description, price }) {
   const { secondProductArray, setCardStates } = useGlobalContext();
 
   const handleClick = (index) => {
@@ -34,7 +34,11 @@ function ProductCard({ name, type, description, price }) {
         return (
           <div key={CardDecision.id} className="Card">
             <h2 className="titlecard">{name}</h2>
-            <img className="imgcard" src="src/assets/0.png" alt="shampoing" />
+            <img
+              className="imgcard"
+              src={`src/assets/${id}.jpeg`}
+              alt="shampoing"
+            />
             <button className="button__desc" type="button" onClick={hClick}>
               Plus de détails
             </button>
@@ -63,6 +67,7 @@ function ProductCard({ name, type, description, price }) {
   );
 }
 ProductCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
