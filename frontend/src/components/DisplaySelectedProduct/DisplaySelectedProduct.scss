@@ -9,10 +9,15 @@
   width: 50vw;
 }
 .selected_product_image {
+  height: 22vh;
   width: 48vw;
+  border-radius: 25px;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .selected_product_title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-inline: 2vw;
+  word-break: normal;
   text-align: center;
   position: absolute;
   color: $white;
