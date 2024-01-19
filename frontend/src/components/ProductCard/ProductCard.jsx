@@ -16,31 +16,20 @@ function ProductCard() {
     });
   };
 
-  const secondProductsLink = similarProduct.map((secondProduct) => {
-    const secondProductsInfos = allProducts.find(
-      (product) => product.ProductID === secondProduct
-    );
-
+  const secondProductsLink = similarProduct.map((e) => {
+    const secondProductsInfos = allProducts.find((product) => product.id === e);
     if (secondProductsInfos) {
       return {
-        name: secondProductsInfos.Item_Purchased,
-        brand: secondProductsInfos.Brand,
-        type: secondProductsInfos.Category_y,
-        description: secondProductsInfos.Description,
-        price: secondProductsInfos.Price,
-        quantity: secondProduct.nombre_d_achats,
-        src: secondProductsInfos.image_link,
+        id: secondProductsInfos.id,
+        name: secondProductsInfos.name,
+        brand: secondProductsInfos.brand,
+        type: secondProductsInfos.type,
+        description: secondProductsInfos.description,
+        price: secondProductsInfos.price,
+        src: secondProductsInfos.src,
       };
     }
-    return {
-      name: "toto",
-      brand: "toto",
-      type: "toto",
-      description: "toto",
-      price: "toto",
-      quantity: "toto",
-      src: "toto",
-    };
+    return null;
   });
   if (secondProductsLink === undefined) {
     return <p>Loading...</p>;
@@ -54,7 +43,7 @@ function ProductCard() {
             <h2 className="titlecard">{e.name}</h2>
             <img
               className="imgcard"
-              src={`../../../${e.src}`}
+              src={`/src/assets/${e.id}.jpeg`}
               alt="shampoing"
             />
 
