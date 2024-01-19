@@ -4,11 +4,14 @@ import NavBar from "../components/NavBar/NavBar";
 import SearchBar from "../components/SearchBar/SearchBar";
 import "./Home.scss";
 import ProductCard from "../components/ProductCard/ProductCard";
+import { useGlobalContext } from "../components/Context/GlobalContextProvider";
 
 function Home() {
   const AllProducts = useLoaderData();
   const UniqueProduct = [];
   const uniqueProductIds = new Set();
+  const { setAllProducts } = useGlobalContext();
+  setAllProducts(AllProducts);
 
   for (let i = 0; i < AllProducts.length; i += 1) {
     const productId = AllProducts[i].ProductID;
@@ -22,7 +25,6 @@ function Home() {
       uniqueProductIds.add(productId);
     }
   }
-
   const testArray = [
     {
       ProductID: 10,
@@ -55,12 +57,11 @@ function Home() {
         description: secondProductsInfos.Description,
         price: secondProductsInfos.Price,
         quantity: secondProduct.nombre_d_achats,
+        src: secondProductsInfos.image_link,
       };
     }
   });
   console.info(secondProductsLink);
-
-  console.info(UniqueProduct);
   return (
     <div className="homepage">
       <NavBar />

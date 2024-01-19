@@ -46,14 +46,13 @@ function SearchBar({ UniqueProduct }) {
       sendToBack();
     }
   }, [selectedValue]);
-
   const handleChange = (event, newValue) => {
     setSelectedValue(newValue);
   };
 
   return (
     <div className="main">
-      <div className="search">
+      <div className={selectedValue ? "search" : "nosearch"}>
         <Autocomplete
           disablePortal
           id="combo-box-demo"
