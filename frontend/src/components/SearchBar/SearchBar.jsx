@@ -27,13 +27,14 @@ function SearchBar({ UniqueProduct }) {
             selectedValue.id
           }/ml`
         );
+        const mlData = [1, 2];
 
         if (!secondsResponse.ok || !mlResponse.ok) {
           throw new Error("Failed to fetch data");
         }
 
         const secondsData = await secondsResponse.json();
-        const mlData = await mlResponse.json();
+        // const mlData = await mlResponse.json();
 
         setSecondProductArray(secondsData);
         setSimilarProduct(mlData);
