@@ -9,13 +9,13 @@ function DisplaySelectedProduct() {
 
   if (selectedProductInfos) {
     // eslint-disable-next-line camelcase, no-unused-vars
-    const { name, src } = selectedProductInfos;
+    const { id, name } = selectedProductInfos;
   }
   return (
     selectedValue && (
       <div className="selected_product_container">
         <img
-          src={`../../../${selectedProductInfos.src}`}
+          src={`/src/assets/${selectedProductInfos.id}.jpeg`}
           alt="Produit sélectionné"
           className="selected_product_image"
         />
