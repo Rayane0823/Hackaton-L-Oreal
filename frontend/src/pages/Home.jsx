@@ -1,11 +1,14 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useLoaderData } from "react-router-dom";
 import DisplaySelectedProduct from "../components/DisplaySelectedProduct/DisplaySelectedProduct";
 import NavBar from "../components/NavBar/NavBar";
 import SearchBar from "../components/SearchBar/SearchBar";
 import "./Home.scss";
 import ProductCard from "../components/ProductCard/ProductCard";
+import { useGlobalContext } from "../components/Context/GlobalContextProvider";
 
 function Home() {
+  const { secondProductArray } = useGlobalContext();
   const AllProducts = useLoaderData();
   const UniqueProduct = [];
   const uniqueProductIds = new Set();
@@ -23,41 +26,21 @@ function Home() {
     }
   }
 
-  const testArray = [
-    {
-      ProductID: 10,
-      nombre_d_achats: 10,
-    },
-    {
-      ProductID: 14,
-      nombre_d_achats: 8,
-    },
-    {
-      ProductID: 20,
-      nombre_d_achats: 4,
-    },
-    {
-      ProductID: 2,
-      nombre_d_achats: 2,
-    },
-  ];
-
   // eslint-disable-next-line array-callback-return, consistent-return
-  const secondProductsLink = testArray.map((secondProduct) => {
+  const secondProductsLink = secondProductArray.map((secondProduct) => {
     const secondProductsInfos = AllProducts.find(
       (product) => product.ProductID === secondProduct.ProductID
     );
     if (secondProductsInfos) {
       return {
         name: secondProductsInfos.Item_Purchased,
-        brand: secondProductsInfos.Brand,
         type: secondProductsInfos.Category_y,
         description: secondProductsInfos.Description,
         price: secondProductsInfos.Price,
-        quantity: secondProduct.nombre_d_achats,
       };
     }
   });
+  const DisplayThreeProducts = secondProductsLink.slice(0, 3);
   console.info(secondProductsLink);
 
   console.info(UniqueProduct);
@@ -71,7 +54,15 @@ function Home() {
         <DisplaySelectedProduct />
       </div>
       <div className="homepage__productCArd">
-        <ProductCard />
+        {DisplayThreeProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            type={product.type}
+            description={product.description}
+            price={product.price}
+          />
+        ))}
       </div>
     </div>
   );
